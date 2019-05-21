@@ -55,10 +55,20 @@ nav{
 }
 
 .min {
-    
-    .nav-brand{
-        padding: 1rem 2.7rem;
+    nav{
+        .nav-brand{
+            padding: 1rem 1.3rem;
+
+            img{
+                width: 39px;
+            }
+        }        
+
+        ul{
+            padding-left: 0.6rem;
+        }
     }
+
 
     .main{
         margin-left: 8.9rem;

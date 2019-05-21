@@ -6,6 +6,66 @@ header{
     margin-bottom: 4.5rem;
     font-family: 'Circular'; 
 
+    .dropdown-menu{
+        background:white;
+        border: 1px solid #EFEFEF;
+        box-shadow: -2px 7px 44px -24px rgba(0,0,0,0.50);
+        border-radius: 10px;
+        padding-top:0rem;
+
+        h4{
+            background: #6B82F7;
+            border-radius: 10px 10px 0 0;
+            color: white;
+            padding: 1rem 5rem;
+            font-size: 1.3rem;
+        }
+
+        a{
+            display: flex;
+            padding: 1rem;
+            transition: 0.4s;
+
+            &:hover{
+                background: #F7F7F7;
+                text-decoration: none;
+
+                i{
+                  background-color: #6B82F7;
+                }
+            }
+
+            i{
+                width: 40px;
+                display: inline-block;
+                text-align: center;
+                border-radius: 50%;
+                height: 40px;
+                line-height: 40px;
+                font-size: 1.1rem;
+                background: #ABABAB;
+                margin-right: 1rem;
+                color: white;
+            }
+
+            .new{
+                background: #6B82F7;
+            }
+
+            h5{
+                color:#909090;
+                font-weight: 500;
+                margin-bottom: 0rem;
+                font-size: 1rem;
+            }
+
+            p{
+                color:#6D6D6D;
+                font-weight: bold;
+            }
+        }
+    }
+
     //seach 
     .form-group{
         width: 300px;

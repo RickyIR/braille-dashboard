@@ -32,8 +32,21 @@ html
                         label(for="search").label-float Search
                         input(type="text").form-control
                     div
-                        button.notification 
+                        button.notification#dropdownMenuButton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') 
                             i.far.fa-bell
+                        .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                            h4 Notifications
+                            .d-flex.flex-column
+                                - const notification = [{icon: 'fas fa-exclamation new', subtitle: 'Stats', content: 'Running Braille Game'}, {icon: 'fas fa-ice-cream', subtitle: 'Stats', content: 'Running Braille Game'}, {icon: 'fas fa-dragon', subtitle: 'New Game', content: 'Running Braille Game'}]
+                                    each val in notification
+                                        a(href='#')
+                                            div
+                                                i(class= val['icon'])(class= val['colors'])
+                                            div
+                                                h5
+                                                    = val['subtitle']
+                                                p 
+                                                    = val['content']
                         button.profile A  
                         i.fas.fa-chevron-down
                 .home
@@ -54,22 +67,24 @@ html
                             h2 Achievements
                             button.btn-toggle.bg-primary.ml-4
                                 i.fas.fa-ellipsis-h
-                        .d-flex.flex-wrap
+                        .row
                             - const achieve = [{icon: 'fas fa-university', subtitle: 'Too Fast', content: 'Air Braille', colors: 'primary'}, {icon: 'fas fa-university', subtitle: 'Good Read!', content: 'Cards', colors: 'm-badges--orange'}, {icon: 'fas fa-university', subtitle: 'Too Fast', content: 'Air Braille', colors: 'm-badges--green'},{icon: 'fas fa-university', subtitle: 'Too Fast', content: 'Air Braille',colors: 'm-badges--blue'},{icon: 'fas fa-university', subtitle: 'Too Fast', content: 'Air Braille', colors: 'm-badges--purple'}]
                                 each val in achieve
-                                        .card 
-                                            a(href="#")
-                                                i(class= val['icon'])(class= val['colors'])
-                                                .card-body
-                                                    h3.card-title(class= val['colors'])
-                                                        = val['subtitle']
-                                                    p.card-text 
-                                                        = val['content']
-                            .card.last.bg-primary
-                                a(href="#")
-                                    .card-body
-                                        .card-title  View  all
-                                        .card-text 14
+                                        .col-md-3
+                                            .card 
+                                                a(href="#")
+                                                    i(class= val['icon'])(class= val['colors'])
+                                                    .card-body
+                                                        h3.card-title(class= val['colors'])
+                                                            = val['subtitle']
+                                                        p.card-text 
+                                                            = val['content']
+                            .col-md-3
+                                .card.last.bg-primary
+                                    a(href="#")
+                                        .card-body
+                                            .card-title  View  all
+                                            .card-text 14
 
                     
                     .home-locked
