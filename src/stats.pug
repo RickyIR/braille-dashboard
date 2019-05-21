@@ -1,0 +1,75 @@
+doctype html
+html
+    include includes/head.pug
+        body
+            nav
+                .nav-brand
+                    img(src="images/logo.png")
+                ul
+                    .mb-3
+                        button.toggle
+                            strong MENU
+                    li
+                        a(href="#").active  
+                            i.fas.fa-home 
+                            span Home
+                    li
+                        a(href="#") 
+                            i.fas.fa-cog 
+                            span Settings
+                    li
+                        a(href="#") 
+                            i.far.fa-star 
+                            span Stats
+                    li
+                        a(href="#")
+                            i.fas.fa-sign-out-alt  
+                            span Sign Out
+            .main
+                .container        
+                    include includes/header.pug
+                    .stat
+                        .d-flex.align-center.mb-4
+                            h2 Stats
+                        .row    
+                            .col-md-8
+                                .row
+                                    .col-md-6.mb-3
+                                        .card.stat-badges
+                                            .card-body
+                                                h3 
+                                                    strong 120/400 
+                                                    div Badges Earned
+                                                        .stat-badges-bar
+                                                            .stat-badges-bar-inner
+                                    .col-md-6.mb-3
+                                        .card.bg-primary.text-white.stat-points
+                                            .card-body
+                                                h3 
+                                                    strong 100
+                                                    div points
+                                    .col-md-12.mb-3
+                                        .card.stat-unlocked
+                                            .card-body
+                                                i.fas.fa-globe-americas
+                                                h3
+                                                    | 5/10 Levels Unlocked
+                                    .col-md-12.mb-3
+                                        .card.stat-unlocked
+                                            .card-body
+                                                i.fas.fa-dizzy
+                                                h3
+                                                    | 8/20 Game Modes Unlocked
+                            .col-md-4
+                                .card.h-100
+                                    .card-body.stat-time
+                                        div
+                                            i.far.fa-clock
+                                            h4 
+                                                strong 12 Hours 
+                                                div Total Played
+                                        div
+                                            i.fas.fa-dice-d6
+                                            h4 
+                                                strong 50 Games 
+                                                div Total Played

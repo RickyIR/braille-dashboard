@@ -1,0 +1,23 @@
+header
+    form.form-group
+        button(type="submit").search <i class="fas fa-search"></i>
+        label(for="search").label-float Search
+        input(type="text").form-control
+    div
+        button.notification#dropdownMenuButton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') 
+            i.far.fa-bell
+        .dropdown-menu(aria-labelledby='dropdownMenuButton')
+            h4 Notifications
+            .d-flex.flex-column
+                - const notification = [{icon: 'fas fa-exclamation new', subtitle: 'Stats', content: 'Running Braille Game'}, {icon: 'fas fa-ice-cream', subtitle: 'Stats', content: 'Running Braille Game'}, {icon: 'fas fa-dragon', subtitle: 'New Game', content: 'Running Braille Game'}]
+                    each val in notification
+                        a(href='#')
+                            div
+                                i(class= val['icon'])
+                            div
+                                h5
+                                    = val['subtitle']
+                                p 
+                                    = val['content']
+        button.profile A  
+        i.fas.fa-chevron-down
