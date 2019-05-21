@@ -1,0 +1,55 @@
+doctype html
+html
+    include includes/head.pug
+        body
+            nav
+                .nav-brand
+                    img(src="images/logo.png")
+                ul
+                    .mb-3
+                        button.toggle
+                            strong MENU
+                    li
+                        a(href="#").active  
+                            i.fas.fa-home 
+                            span Home
+                    li
+                        a(href="#") 
+                            i.fas.fa-cog 
+                            span Settings
+                    li
+                        a(href="#") 
+                            i.far.fa-star 
+                            span Stats
+                    li
+                        a(href="#")
+                            i.fas.fa-sign-out-alt  
+                            span Sign Out
+            .main        
+                header
+                    form.form-group
+                        button(type="submit").search <i class="fas fa-search"></i>
+                        label(for="search").label-float Search
+                        input(type="text").form-control
+                    div
+                        button.notification 
+                            i.far.fa-bell
+                        button.profile A  
+                        i.fas.fa-chevron-down
+                .games
+                    .d-flex.align-center.mb-4
+                        h2 Games
+                        button.btn-toggle.bg-primary.ml-4
+                            i.fas.fa-ellipsis-h
+                    .row    
+                        - const achieve = [{icon: 'fab fa-dribbble', subtitle: 'Air Braille', colors: 'games--air'}, {icon: 'fas fa-anchor', subtitle: 'Braille Catch', colors: 'games--catch'}, {icon: 'fas fa-bomb', subtitle: 'Word Explosion', colors: 'games--word'}, {icon: 'fas fa-parachute-box', subtitle: 'Float Words', colors: 'games--float'}, {icon: 'fas fa-mug-hot', subtitle: 'Call of Braille', colors: 'games--call'},  {icon: 'fas fa-dragon', subtitle: 'Braille Kombat', colors: 'games--kombat'}]
+                            each val in achieve
+                                    .col-lg-4
+                                        .card(class= val['colors'])
+                                            a(href="#")
+                                                .card-body
+                                                    i(class= val['icon'])
+                                                    .card-title
+                                                        = val['subtitle']
+                                                    p.card-text 
+                                                        = val['content']                          

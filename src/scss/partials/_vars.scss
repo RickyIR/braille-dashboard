@@ -1,0 +1,61 @@
+$theme-colors: (
+    'primary': #F53A88
+);
+
+// _m-buttons.scss
+$buttons: (
+  orange: (#fcd5cc #F55D3A),
+  green: (#e3f5e2, #93DA8E),
+  blue: (#e2f0f5, #8EC6DA),
+  purple: (#ecdaff, #B66FFF)
+);
+
+.m-badges {   
+    @each $name, $colors in $buttons {
+      $bgcolor: nth($colors, 1);
+      $fontcolor: nth($colors, 2);
+       
+      &--#{$name} {
+        background-color: $bgcolor;
+        color: $fontcolor;
+      }  
+    }
+  }
+
+
+
+
+  //games
+$games: (
+    air: (#FF2C82 #FF2C82),
+    catch: (#e3f5e2, #4AC99B),
+    word: (#e2f0f5, #4E53CC),
+    float: (#2C99FF, #2C99FF),
+    call: (#FF1E90, #FF1E90),
+    kombat: (#FFAB15,  #FFAB15)
+  );
+  
+  .games {   
+      @each $name, $colors in $games {
+        $fontcolor: nth($colors, 2);
+         
+        &--#{$name} {
+           a{
+                 color: $fontcolor;
+            }
+            
+            &:hover{
+                background-color: $fontcolor;
+
+                a{
+                    color:white;
+                    text-decoration: none;  
+
+                    .card-body{
+                        transform: scale(1.1);   
+                    }
+                }
+            }
+        }      
+      }
+    }

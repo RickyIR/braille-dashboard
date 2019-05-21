@@ -1,0 +1,86 @@
+doctype html
+html
+    include includes/head.pug
+        body
+            nav
+                .nav-brand
+                    img(src="images/logo.png")
+                ul
+                    .mb-3
+                        button.toggle
+                            strong MENU
+                    li
+                        a(href="#").active  
+                            i.fas.fa-home 
+                            span Home
+                    li
+                        a(href="#") 
+                            i.fas.fa-cog 
+                            span Settings
+                    li
+                        a(href="#") 
+                            i.far.fa-star 
+                            span Stats
+                    li
+                        a(href="#")
+                            i.fas.fa-sign-out-alt  
+                            span Sign Out
+            .main        
+                header
+                    form.form-group
+                        button(type="submit").search <i class="fas fa-search"></i>
+                        label(for="search").label-float Search
+                        input(type="text").form-control
+                    div
+                        button.notification 
+                            i.far.fa-bell
+                        button.profile A  
+                        i.fas.fa-chevron-down
+                .home
+                    .home-main
+                        button
+                            .card
+                                .card-body
+                                    i.fas.fa-gamepad
+                                    .card-text Games
+
+                        button
+                            .card
+                                .card-body.text-primary
+                                    i.fas.fa-cube
+                                    .card-text Challenges
+                    .home-acheivements
+                        .d-flex.align-center.mb-4
+                            h2 Achievements
+                            button.btn-toggle.bg-primary.ml-4
+                                i.fas.fa-ellipsis-h
+                        .d-flex.flex-wrap
+                            - const achieve = [{icon: 'fas fa-university', subtitle: 'Too Fast', content: 'Air Braille', colors: 'primary'}, {icon: 'fas fa-university', subtitle: 'Good Read!', content: 'Cards', colors: 'm-badges--orange'}, {icon: 'fas fa-university', subtitle: 'Too Fast', content: 'Air Braille', colors: 'm-badges--green'},{icon: 'fas fa-university', subtitle: 'Too Fast', content: 'Air Braille',colors: 'm-badges--blue'},{icon: 'fas fa-university', subtitle: 'Too Fast', content: 'Air Braille', colors: 'm-badges--purple'}]
+                                each val in achieve
+                                        .card 
+                                            a(href="#")
+                                                i(class= val['icon'])(class= val['colors'])
+                                                .card-body
+                                                    h3.card-title(class= val['colors'])
+                                                        = val['subtitle']
+                                                    p.card-text 
+                                                        = val['content']
+                            .card.last.bg-primary
+                                a(href="#")
+                                    .card-body
+                                        .card-title  View  all
+                                        .card-text 14
+
+                    
+                    .home-locked
+                        h2 Challenges to Unlock
+                        .home-locked-group
+                            - const locked = [{ icon: 'fas fa-award', subtitle: 'Badges' }, {  icon: 'fas fa-globe-americas', subtitle: 'Levels'}, {icon: 'fas fa-dizzy', subtitle: 'Modes'}]
+                                each val in locked
+                                    .card
+                                        .card-body
+                                            a(href="#")
+                                                i(class = val['icon'])
+                                                .card-title
+                                                    = val['subtitle']
+                                                
